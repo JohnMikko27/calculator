@@ -10,7 +10,7 @@
     grid-column: 1 / 6;
     border: 2px solid;
     border-color: black;
-    
+    text-align: center;
 }
 
 #clear-button {
