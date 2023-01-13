@@ -8,44 +8,82 @@ const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 
+const addition = document.querySelector('.addition');
+const subtraction = document.querySelector('.subtraction');
+const multiplication = document.querySelector('.multiplication');
+const division = document.querySelector('.division');
+const equals = document.querySelector('.equals')
+
 const displayScreen = document.querySelector('#display');
 
-let displayValue;
+let displayValue = '';
+let num1 = 0;
+let num2 = 0;
+let operator = '';
+
+addition.addEventListener('click', () => {
+    operator = '+';
+    if (num1 !== 0) {
+        num2 = displayValue;
+        displayValue = operate('+', num1, num2);
+        display();
+    } else {
+        num1 = displayValue;
+        displayValue = '';
+    }
+    
+})
+
+equals.addEventListener('click', () => {
+    num2 = +displayValue;
+    displayValue = operate(operator, num1, num2);
+    display();
+});
+
+
 
 one.addEventListener('click', () => {
-    displayValue = 1
+    displayValue = +displayValue + 1;
     display();
 });
+
 two.addEventListener('click', () => {
-    displayValue = 2;
+    displayValue = +displayValue + 2;
     display();
 });
+
 three.addEventListener('click', () => {
-    displayValue = 3;
+    displayValue = +displayValue + 3;
     display();
 });
+
 four.addEventListener('click', () => {
-    displayValue = 4;
+    displayValue = +displayValue + 4;
     display();
 });
+
 five.addEventListener('click', () => {
-    displayValue = 5;
+    displayValue = +displayValue + 5;
     display();
 });
+
 six.addEventListener('click', () => {
-    displayValue = 6;
+    displayValue = +displayValue + 6;
     display();
 });
+
 seven.addEventListener('click', () => {
-    displayValue = 7;
+    displayValue = +displayValue + 7;
     display();
 });
+
 eight.addEventListener('click', () => {
-    displayValue = 8;
+    displayValue = +displayValue + 8;
     display();
 });
+
 nine.addEventListener('click', () => {
-    displayValue = 9;
+    displayValue = +displayValue + 9;
     display();
 });
 
@@ -68,6 +106,8 @@ function multiply(a, b) {
 function divide(a, b) {
     return a / b;
 }
+
+
 
 function operate(operator, num1, num2) {
     let value;
