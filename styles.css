@@ -6,11 +6,19 @@
     gap: .5rem;
 }
 
+button {
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 7px;
+}
+
 #display {
     grid-column: 1 / 6;
     border: 2px solid;
     border-color: black;
     text-align: center;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #clear-button {

@@ -22,19 +22,14 @@ let num2 = 0;
 let operator = '';
 
 addition.addEventListener('click', () => {
-    
-    if (num1 !== 0 && num2 !== 0) {
-        displayValue = operate(operator, num1, num2);
-        display();
-        operator = '+'
-        num1 = +displayValue;
-        num2 = 0;
-        displayValue = '';
-    } else if (num1 !== 0 && num2 === 0){
+    //num2 is only assigned after a 2nd operator is clicked
+    //so we operate that first, display it, set num1 equal to the displayValue, and set num2 equal to 0
+    //if an operator is clicked multiple times (e.g. 2 + 4 - 5 * 6), it will just cycle and keep running the if statement
+    if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
-        operator = '+';
         displayValue = operate(operator, num1, num2);
         display();
+        operator = '+';
         num1 = +displayValue;
         num2 = 0;
         displayValue = '';
@@ -46,27 +41,59 @@ addition.addEventListener('click', () => {
 })
 
 subtraction.addEventListener('click', () => {
-    operator = '-';
-    num1 = +displayValue;
-    displayValue = '';
+    if (num1 !== 0 && num2 === 0) {
+        num2 = +displayValue;
+        displayValue = operate(operator, num1, num2);
+        display();
+        operator = '-'
+        num1 = +displayValue;
+        num2 = 0;
+        displayValue = '';
+    } else {
+        operator = '-';
+        num1 = +displayValue;
+        displayValue = '';
+    }
 })
 
 multiplication.addEventListener('click', () => {
-    operator = '*';
-    num1 = +displayValue;
-    displayValue = '';
+    if (num1 !== 0 && num2 === 0) {
+        num2 = +displayValue;
+        displayValue = operate(operator, num1, num2);
+        display();
+        operator = '*';
+        num1 = +displayValue;
+        num2 = 0;
+        displayValue = '';
+    } else {
+        operator = '*';
+        num1 = +displayValue;
+        displayValue = '';
+    }
 })
 
 division.addEventListener('click', () => {
-    operator = '/';
-    num1 = +displayValue;
-    displayValue = '';
+    if (num1 !== 0 && num2 === 0) {
+        num2 = +displayValue;
+        displayValue = operate(operator, num1, num2);
+        display();
+        operator = '/';
+        num1 = +displayValue;
+        num2 = 0;
+        displayValue = '';
+    } else {
+        operator = '/';
+        num1 = +displayValue;
+        displayValue = '';
+    }
 })
 
 equals.addEventListener('click', () => {
     num2 = +displayValue;
     displayValue = operate(operator, num1, num2);
     display();
+    num1 = +displayValue;
+    num2 = 0;
     displayValue = '';
 });
 
