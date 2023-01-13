@@ -22,21 +22,27 @@ let num2 = 0;
 let operator = '';
 
 addition.addEventListener('click', () => {
-    operator = '+';
-    /*if (num1 !== 0) {
-
-        num2 = +displayValue;
-        displayValue = operate('+', num1, num2);
+    
+    if (num1 !== 0 && num2 !== 0) {
+        displayValue = operate(operator, num1, num2);
         display();
-        //there's a bug when clicking '+' more than once, might have to reassign num1 and num2
+        operator = '+'
+        num1 = +displayValue;
         num2 = 0;
+        displayValue = '';
+    } else if (num1 !== 0 && num2 === 0){
+        num2 = +displayValue;
+        operator = '+';
+        displayValue = operate(operator, num1, num2);
+        display();
+        num1 = +displayValue;
+        num2 = 0;
+        displayValue = '';
     } else {
+        operator = '+';
         num1 = +displayValue;
         displayValue = '';
-    }*/
-    
-    num1 = +displayValue;
-    displayValue = '';
+    }
 })
 
 subtraction.addEventListener('click', () => {
@@ -61,6 +67,7 @@ equals.addEventListener('click', () => {
     num2 = +displayValue;
     displayValue = operate(operator, num1, num2);
     display();
+    displayValue = '';
 });
 
 one.addEventListener('click', () => {
