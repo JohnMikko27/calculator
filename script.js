@@ -23,15 +23,38 @@ let operator = '';
 
 addition.addEventListener('click', () => {
     operator = '+';
-    if (num1 !== 0) {
-        num2 = displayValue;
+    /*if (num1 !== 0) {
+
+        num2 = +displayValue;
         displayValue = operate('+', num1, num2);
         display();
+        //there's a bug when clicking '+' more than once, might have to reassign num1 and num2
+        num2 = 0;
     } else {
-        num1 = displayValue;
+        num1 = +displayValue;
         displayValue = '';
-    }
+    }*/
     
+    num1 = +displayValue;
+    displayValue = '';
+})
+
+subtraction.addEventListener('click', () => {
+    operator = '-';
+    num1 = +displayValue;
+    displayValue = '';
+})
+
+multiplication.addEventListener('click', () => {
+    operator = '*';
+    num1 = +displayValue;
+    displayValue = '';
+})
+
+division.addEventListener('click', () => {
+    operator = '/';
+    num1 = +displayValue;
+    displayValue = '';
 })
 
 equals.addEventListener('click', () => {
@@ -40,50 +63,48 @@ equals.addEventListener('click', () => {
     display();
 });
 
-
-
 one.addEventListener('click', () => {
-    displayValue = +displayValue + 1;
+    displayValue += '1';
     display();
 });
 
 two.addEventListener('click', () => {
-    displayValue = +displayValue + 2;
+    displayValue += '2';
     display();
 });
 
 three.addEventListener('click', () => {
-    displayValue = +displayValue + 3;
+    displayValue += '3';
     display();
 });
 
 four.addEventListener('click', () => {
-    displayValue = +displayValue + 4;
+    displayValue += '4';
     display();
 });
 
 five.addEventListener('click', () => {
-    displayValue = +displayValue + 5;
+    displayValue += '5';
     display();
 });
 
 six.addEventListener('click', () => {
-    displayValue = +displayValue + 6;
+    displayValue += '6';
     display();
 });
 
 seven.addEventListener('click', () => {
-    displayValue = +displayValue + 7;
+    displayValue += '7';
     display();
 });
 
 eight.addEventListener('click', () => {
-    displayValue = +displayValue + 8;
+    displayValue += '8';
     display();
 });
 
 nine.addEventListener('click', () => {
-    displayValue = +displayValue + 9;
+    displayValue += '9';
     display();
 });
 
