@@ -7,12 +7,15 @@ const six = document.querySelector('.six');
 const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
+const zero = document.querySelector('.zero');
+const decimal = document.querySelector('.decimal')
 
 const addition = document.querySelector('.addition');
 const subtraction = document.querySelector('.subtraction');
 const multiplication = document.querySelector('.multiplication');
 const division = document.querySelector('.division');
 const equals = document.querySelector('.equals')
+const clear = document.querySelector('#clear-button');
 
 const displayScreen = document.querySelector('#display');
 
@@ -22,8 +25,8 @@ let num2 = 0;
 let operator = '';
 
 addition.addEventListener('click', () => {
-    //num2 is only assigned after a 2nd operator is clicked
-    //so we operate that first, display it, set num1 equal to the displayValue, and set num2 equal to 0
+    //num2 is only assigned after a 2nd operator is clicked (e.g. when you're doing 2 (num1) + 4(num2) - 1)
+    //so we operate first, display it, set num1 equal to the displayValue/result of the operation, and set num2 equal to 0
     //if an operator is clicked multiple times (e.g. 2 + 4 - 5 * 6), it will just cycle and keep running the if statement
     if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
@@ -88,6 +91,14 @@ division.addEventListener('click', () => {
     }
 })
 
+clear.addEventListener('click', () => {
+    num1 = 0;
+    num2 = 0;
+    operator = '';
+    displayValue = '';
+    display();
+})
+
 equals.addEventListener('click', () => {
     num2 = +displayValue;
     displayValue = operate(operator, num1, num2);
@@ -96,6 +107,11 @@ equals.addEventListener('click', () => {
     num2 = 0;
     displayValue = '';
 });
+
+zero.addEventListener('click', () => {
+    displayValue += '0';
+    display();
+})
 
 one.addEventListener('click', () => {
     displayValue += '1';
@@ -141,6 +157,12 @@ nine.addEventListener('click', () => {
     displayValue += '9';
     display();
 });
+
+decimal.addEventListener('click', () => {
+    displayValue += '.';
+    display();
+})
+
 
 function display() {
     displayScreen.textContent = displayValue;
