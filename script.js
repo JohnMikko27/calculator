@@ -34,6 +34,9 @@ addition.addEventListener('click', () => {
     } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
+        if (displayValue - Math.floor(displayValue) !== 0) {
+            displayValue = displayValue.toFixed(3);
+        }
         display();
         operator = '+';
         num1 = +displayValue;
@@ -52,8 +55,11 @@ subtraction.addEventListener('click', () => {
     } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
+        if (displayValue - Math.floor(displayValue) !== 0) {
+            displayValue = displayValue.toFixed(3);
+        }
         display();
-        operator = '-'
+        operator = '-';
         num1 = +displayValue;
         num2 = 0;
         displayValue = '';
@@ -70,6 +76,9 @@ multiplication.addEventListener('click', () => {
     } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
+        if (displayValue - Math.floor(displayValue) !== 0) {
+            displayValue = displayValue.toFixed(3);
+        }
         display();
         operator = '*';
         num1 = +displayValue;
@@ -88,6 +97,9 @@ division.addEventListener('click', () => {
     } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
+        if (displayValue - Math.floor(displayValue) !== 0) {
+            displayValue = displayValue.toFixed(3);
+        }
         display();
         operator = '/';
         num1 = +displayValue;
@@ -109,30 +121,22 @@ clear.addEventListener('click', () => {
 })
 
 deleteButton.addEventListener('click', () => {
-    if (displayValue == '') {
-       
-        let temp = num1.toString().split('');
-        temp.pop();
-        displayValue = temp.reduce((accumulator, char) => {
-            return accumulator + char;
-        }, '');
-        display();
-        num1 = +displayValue;
-        displayValue = '';
-    } else {
-        num1 = +displayValue;
-        let temp = num1.toString().split('');
-        temp.pop();
-        displayValue = temp.reduce((accumulator, char) => {
-            return accumulator + char;
-        }, '');
-        display();
-    }
+    let temp = num1.toString().split('');
+    temp.pop();
+    displayValue = temp.reduce((accumulator, char) => {
+        return accumulator + char;
+    }, '');
+    display();
+    num1 = +displayValue;
+    displayValue = '';
 })
 
 equals.addEventListener('click', () => {
     num2 = +displayValue;
     displayValue = operate(operator, num1, num2);
+    if (displayValue - Math.floor(displayValue) !== 0) {
+        displayValue = displayValue.toFixed(3);
+    }
     display();
     num1 = +displayValue;
     num2 = 0;
@@ -190,10 +194,12 @@ nine.addEventListener('click', () => {
 });
 
 decimal.addEventListener('click', () => {
+    if (displayValue.includes('.')) {
+        return;
+    }
     displayValue += '.';
     display();
 })
-
 
 function display() {
     displayScreen.textContent = displayValue;
@@ -215,8 +221,6 @@ function divide(a, b) {
     return a / b;
 }
 
-
-
 function operate(operator, num1, num2) {
     let value;
     switch (operator) {
@@ -235,21 +239,3 @@ function operate(operator, num1, num2) {
     }
     return value;
 }
-
-/*
-Create the functions that populate the display when you click the number buttons. 
-You should be storing the ‘display value’ in a variable somewhere for use in the next step.
-*/
-
-//when number clicked, display number
-
-//need variable that holds display value
-//need function that displays value
-//need to query select display
-
-//when operator clicked, call operate function 
-//need display variable which we will display
-//need 2 variables to store
-
-//if both number variables are zero, that means its a new operation
-//if both aren't zero, then make the result = num1 and num2 = 0
