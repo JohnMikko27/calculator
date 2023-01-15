@@ -117,6 +117,8 @@ deleteButton.addEventListener('click', () => {
             return accumulator + char;
         }, '');
         display();
+        num1 = +displayValue;
+        displayValue = '';
     } else {
         num1 = +displayValue;
         let temp = num1.toString().split('');
@@ -126,7 +128,6 @@ deleteButton.addEventListener('click', () => {
         }, '');
         display();
     }
-    
 })
 
 equals.addEventListener('click', () => {
