@@ -16,6 +16,7 @@ const multiplication = document.querySelector('.multiplication');
 const division = document.querySelector('.division');
 const equals = document.querySelector('.equals')
 const clear = document.querySelector('#clear-button');
+const deleteButton = document.querySelector('#delete-button');
 
 const displayScreen = document.querySelector('#display');
 
@@ -28,7 +29,9 @@ addition.addEventListener('click', () => {
     //num2 is only assigned after a 2nd operator is clicked (e.g. when you're doing 2 (num1) + 4(num2) - 1)
     //so we operate first, display it, set num1 equal to the displayValue/result of the operation, and set num2 equal to 0
     //if an operator is clicked multiple times (e.g. 2 + 4 - 5 * 6), it will just cycle and keep running the if statement
-    if (num1 !== 0 && num2 === 0) {
+    if (num1 !== 0 && num2 === 0 && displayValue == '') {
+        operator = '+';
+    } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
         display();
@@ -44,7 +47,9 @@ addition.addEventListener('click', () => {
 })
 
 subtraction.addEventListener('click', () => {
-    if (num1 !== 0 && num2 === 0) {
+    if (num1 !== 0 && num2 === 0 && displayValue == '') {
+        operator = '-';
+    } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
         display();
@@ -60,7 +65,9 @@ subtraction.addEventListener('click', () => {
 })
 
 multiplication.addEventListener('click', () => {
-    if (num1 !== 0 && num2 === 0) {
+    if (num1 !== 0 && num2 === 0 && displayValue == '') {
+        operator = '*';
+    } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
         display();
@@ -76,7 +83,9 @@ multiplication.addEventListener('click', () => {
 })
 
 division.addEventListener('click', () => {
-    if (num1 !== 0 && num2 === 0) {
+    if (num1 !== 0 && num2 === 0 && displayValue == '') {
+        operator = '/';
+    } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
         display();
@@ -97,6 +106,27 @@ clear.addEventListener('click', () => {
     operator = '';
     displayValue = '';
     display();
+})
+
+deleteButton.addEventListener('click', () => {
+    if (displayValue == '') {
+       
+        let temp = num1.toString().split('');
+        temp.pop();
+        displayValue = temp.reduce((accumulator, char) => {
+            return accumulator + char;
+        }, '');
+        display();
+    } else {
+        num1 = +displayValue;
+        let temp = num1.toString().split('');
+        temp.pop();
+        displayValue = temp.reduce((accumulator, char) => {
+            return accumulator + char;
+        }, '');
+        display();
+    }
+    
 })
 
 equals.addEventListener('click', () => {
