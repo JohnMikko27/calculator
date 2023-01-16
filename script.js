@@ -28,11 +28,12 @@ let num2 = 0;
 let operator = '';
 
 addition.addEventListener('click', () => {
-    //num2 is only assigned after a 2nd operator is clicked (e.g. when you're doing 2 (num1) + 4(num2) - 1)
-    //so we operate first, display it, set num1 equal to the displayValue/result of the operation, and set num2 equal to 0
-    //if an operator is clicked multiple times (e.g. 2 + 4 - 5 * 6), it will just cycle and keep running the if statement
+    //used when '=' was just clicked
     if (num1 !== 0 && num2 === 0 && displayValue == '') {
         operator = '+';
+    //num2 is only assigned after a 2nd operator is clicked (e.g. when you're doing 2 (num1) + 4(num2) - 1)
+    //so we operate first, display it, set num1 equal to the displayValue/result of the operation, and set num2 equal to 0
+    //if an operator is clicked multiple times (e.g. 2 + 4 - 5 * 6), it will just cycle and keep running the else if statement
     } else if (num1 !== 0 && num2 === 0) {
         num2 = +displayValue;
         displayValue = operate(operator, num1, num2);
@@ -134,6 +135,11 @@ deleteButton.addEventListener('click', () => {
 })
 
 equals.addEventListener('click', () => {
+    //if '=' clicked when operator/num1/num2 hasn't been assigned 
+    //e.g. 9 is clicked then '=' or if '=' is clicked before anything is assigned
+    if ((num1 == 0 || operator == '') || (displayValue == '' && num2 == 0)) {
+        return;
+    }
     num2 = +displayValue;
     displayValue = operate(operator, num1, num2);
     if (displayValue - Math.floor(displayValue) !== 0) {
