@@ -18,6 +18,8 @@ const equals = document.querySelector('.equals')
 const clear = document.querySelector('#clear-button');
 const deleteButton = document.querySelector('#delete-button');
 
+const buttons = document.querySelectorAll('button');
+
 const displayScreen = document.querySelector('#display');
 
 let displayValue = '';
@@ -201,6 +203,13 @@ decimal.addEventListener('click', () => {
     display();
 })
 
+buttons.forEach(button => button.addEventListener('mouseover', () => {
+    button.classList.toggle('hover-effect')
+}));
+
+buttons.forEach(button => button.addEventListener('mouseout', () => {
+    button.classList.toggle('hover-effect')
+}));
 function display() {
     displayScreen.textContent = displayValue;
 }

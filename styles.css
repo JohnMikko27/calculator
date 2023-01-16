@@ -25,6 +25,8 @@ button {
     border: 3px solid;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
+    /* cursor: pointer; */
+    /* filter: opacity(0.3); */
 }
 
 #display {
@@ -73,3 +75,7 @@ button {
     grid-row: 6 / 7;
 }
 
+.hover-effect {
+    cursor: pointer;
+    filter: opacity(.65);
+}
