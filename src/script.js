@@ -209,17 +209,17 @@ decimal.addEventListener("click", () => {
   display();
 });
 
-buttons.forEach((button) =>
-  button.addEventListener("mouseover", () => {
-    button.classList.toggle("hover-effect");
-  })
-);
+// buttons.forEach((button) =>
+//   button.addEventListener("mouseover", () => {
+//     button.classList.toggle("hover-effect");
+//   })
+// );
 
-buttons.forEach((button) =>
-  button.addEventListener("mouseout", () => {
-    button.classList.toggle("hover-effect");
-  })
-);
+// buttons.forEach((button) =>
+//   button.addEventListener("mouseout", () => {
+//     button.classList.toggle("hover-effect");
+//   })
+// );
 function display() {
   displayScreen.textContent = displayValue;
 }
