@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .number {
-  @apply;
-} */
+.number {
+  @apply bg-slate-100 text-blue-400 rounded-lg shadow p-2;
+}
+
+.operator {
+  @apply bg-gray-200 text-blue-400 p-2 rounded-lg;
+}
