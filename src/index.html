@@ -9,11 +9,13 @@
     <!-- <script src="./script.js" defer></script> -->
     <!-- <link rel="stylesheet" href="./styles.css" /> -->
   </head>
-  <body class="bg-gray-100 h-screen flex flex-col shadow-2xl text-blue-200">
+  <body
+    class="bg-gray-100 h-screen flex flex-col shadow-2xl text-blue-200 gap-10"
+  >
     <header class="bg-gray-800 py-7 text-5xl font-mono text-center">
       Mikko's Calculator
     </header>
-    <main class="flex justify-center pt-10">
+    <main class="flex justify-center grow">
       <div
         id="grid-container"
         class="bg-gray-800 h-100 w-96 shadow-lg rounded-2xl"
@@ -39,5 +41,14 @@
         <button class="operator equals">=</button>
       </div>
     </main>
+    <footer class="bg-gray-500 text-blue-100 py-6 flex justify-between px-10">
+      <div>Copyrighted &#169; 2023 All Rights Reserved | Privacy Policy</div>
+      <div class="flex gap-4">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Login</a>
+        <a href="#">FAQ</a>
+      </div>
+    </footer>
   </body>
 </html>
