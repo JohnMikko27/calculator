@@ -6,55 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="../public/styles.css" />
-    <script src="./script.js" defer></script>
+    <!-- <script src="./script.js" defer></script> -->
     <!-- <link rel="stylesheet" href="./styles.css" /> -->
-    
   </head>
-  <body class="text-red-400">
-    <!-- <div id="grid-container">
-      <div id="display"></div>
-      <button class="number seven">7</button>
-      <button class="number eight">8</button>
-      <button class="number nine">9</button>
-      <button class="number four">4</button>
-      <button class="number five">5</button>
-      <button class="number six">6</button>
-      <button class="number one">1</button>
-      <button class="number two">2</button>
-      <button class="number three">3</button>
-      <button class="number zero">0</button>
-      <button class="number decimal">.</button>
-
-      <button id="clear-button">Clear</button>
-      <button id="delete-button">Delete</button>
-      <button class="operator addition">+</button>
-      <button class="operator subtraction">-</button>
-      <button class="operator multiplication">*</button>
-      <button class="operator division">/</button>
-      <button class="operator equals">=</button>
-    </div> -->
-    <div class="text-red-500">asdfsdf</div>
-    <div id="grid-container">
-      <div id="display"></div>
-      <!-- <button class="">7</button>
-      <button class="number eight">8</button>
-      <button class="number nine">9</button>
-      <button class="number four">4</button>
-      <button class="number five">5</button>
-      <button class="number six">6</button>
-      <button class="number one">1</button>
-      <button class="number two">2</button>
-      <button class="number three">3</button>
-      <button class="number zero">0</button>
-      <button class="number decimal">.</button>
-
-      <button id="clear-button">Clear</button>
-      <button id="delete-button">Delete</button>
-      <button class="operator addition">+</button>
-      <button class="operator subtraction">-</button>
-      <button class="operator multiplication">*</button>
-      <button class="operator division">/</button>
-      <button class="operator equals">=</button>
-    </div> -->
+  <body class="bg-gray-100 h-screen flex flex-col shadow-2xl text-blue-200">
+    <header class="bg-gray-800 py-7 text-5xl font-mono text-center">
+      Mikko's Calculator
+    </header>
+    <main class="flex justify-center pt-10">
+      <div
+        id="grid-container"
+        class="bg-gray-800 h-100 w-96 shadow-lg rounded-2xl"
+      >
+        <div id="display"></div>
+        <button class="">7</button>
+        <button class="number eight">8</button>
+        <button class="number nine">9</button>
+        <button class="number four">4</button>
+        <button class="number five">5</button>
+        <button class="number six">6</button>
+        <button class="number one">1</button>
+        <button class="number two">2</button>
+        <button class="number three">3</button>
+        <button class="number zero">0</button>
+        <button class="number decimal">.</button>
+        <button id="clear-button">Clear</button>
+        <button id="delete-button">Delete</button>
+        <button class="operator addition">+</button>
+        <button class="operator subtraction">-</button>
+        <button class="operator multiplication">*</button>
+        <button class="operator division">/</button>
+        <button class="operator equals">=</button>
+      </div>
+    </main>
   </body>
 </html>
