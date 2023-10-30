@@ -18,11 +18,11 @@
     <main class="flex justify-center grow">
       <div
         id="grid-container"
-        class="bg-gray-800 h-100 w-96 shadow-lg rounded-2xl p-8 flex flex-col gap-4"
+        class="bg-gray-800 h-100 w-96 shadow-lg rounded-2xl p-8 flex flex-col gap-2"
       >
         <div class="bg-gray-300 w-full h-24 rounded-lg" id="display"></div>
         <div class="grow grid grid-cols-1">
-          <div class="w-full flex gap-5 h-12">
+          <div class="w-full flex gap-5 h-12 self-center">
             <button
               class="grow bg-gray-300 text-blue-500 rounded-lg"
               id="clear-button"
@@ -48,7 +48,7 @@
               <button class="number one">1</button>
               <button class="number two">2</button>
               <button class="number three">3</button>
-              <button class="number zero">0</button>
+              <button class="number zero col-span-2">0</button>
               <button class="number decimal">.</button>
             </div>
             <div class="grid grid-cols-1 gap-2">
